@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Everything after this point is "Middleware" - which is handling incoming requests and outgoing responses.
+// everything after here is "Middleware" - which is handing incoming requests and outgoing resposes.
 // We will create some middleware later.
 
 // Configure the HTTP request pipeline.
@@ -22,12 +22,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-// This looks at all of our controllers, reads the routing attributes, and creates a "lookup table" so that when requests come in, they can be sent to the right code to process that request.
+// this looks at all of our controllers, reads the routing attributes, and creates a "lookup table" so that
+// when requests come in, they can be sent to the right code to process that request.
 app.MapControllers();
+// IF I get GET for /blog/int/int/int -> InfoController -> GetBlog
 
-/*app.MapGet("/info", () =>
-{
-    return "All Good Here";
-});*/
+//app.MapGet("/info", () =>
+//{
+//    return "All Good Here";
+//});
 
-app.Run(); // Blocking call.
+app.Run(); // Blocking Call
