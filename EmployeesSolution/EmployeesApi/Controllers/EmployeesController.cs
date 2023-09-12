@@ -1,6 +1,4 @@
-﻿using EmployeesApi.Models;
-using Microsoft.AspNetCore.Mvc;
-
+﻿
 namespace EmployeesApi.Controllers;
 
 public class EmployeesController : ControllerBase

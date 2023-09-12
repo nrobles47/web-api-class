@@ -10,12 +10,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("employees") ?? throw new Exception("The connection string is missing!");
+var connectionString = builder.Configuration.GetConnectionString("employees") ?? throw new Exception("The connection string is missing");
 
 builder.Services.AddDbContext<EmployeesDataContext>(options =>
 {
     options.UseNpgsql(connectionString);
 });
+
 
 var app = builder.Build();
 

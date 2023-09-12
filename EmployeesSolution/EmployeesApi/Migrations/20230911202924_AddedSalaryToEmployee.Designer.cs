@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EmployeesApi.Migrations
 {
     [DbContext(typeof(EmployeesDataContext))]
-    [Migration("20230911200725_Initial")]
-    partial class Initial
+    [Migration("20230911202924_AddedSalaryToEmployee")]
+    partial class AddedSalaryToEmployee
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,9 @@ namespace EmployeesApi.Migrations
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("Salary")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
