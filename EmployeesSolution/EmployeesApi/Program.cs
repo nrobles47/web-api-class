@@ -17,6 +17,7 @@ builder.Services.AddDbContext<EmployeesDataContext>(options =>
     options.UseNpgsql(connectionString);
 });
 
+builder.Services.AddScoped<IManageEmployees, EfEmployeeManager>();
 
 var app = builder.Build();
 
